@@ -1,6 +1,6 @@
 # Customer Address Retrieval Tool
 
-This project provides a Python script designed to interact with a hypothetical API to retrieve, clean, validate, and save customer addresses. The script also allows for testing via mock data to simulate API responses in the absence of a live API.
+This project provides a Python script designed to interact with a hypothetical API to retrieve, clean, validate, and save customer addresses. The script is designed to work directly with the API and does not include mock data.
 
 ## Features
 
@@ -18,9 +18,6 @@ This project provides a Python script designed to interact with a hypothetical A
 4. **Tabular Display**:
    - Displays the list of addresses in a readable tabular format using the `tabulate` library.
 
-5. **Mock Testing**:
-   - Includes a mock setup to simulate API responses for testing.
-
 ## Prerequisites
 
 - Python 3.7+
@@ -29,7 +26,6 @@ This project provides a Python script designed to interact with a hypothetical A
   - `csv` (built-in)
   - `os` (built-in)
   - `tabulate`
-  - `unittest.mock` (built-in)
 
 You can install `tabulate` using:
 ```bash
@@ -63,15 +59,6 @@ python customer_address_retrieval.py
    - Save the results to a CSV file named `customer_addresses.csv` in the current working directory.
    - Display the data in a tabular format.
 
-### Mock Testing
-
-To test the script without an actual API:
-- The script includes mock responses to simulate:
-  - Total customer count.
-  - Customer address data for each customer.
-
-The mock data assumes there are 10 customers, and their addresses are generated dynamically.
-
 ## Output
 
 1. **CSV File**:
@@ -104,16 +91,8 @@ The mock data assumes there are 10 customers, and their addresses are generated 
 6. `main()`:
    - Orchestrates the execution of all functions and handles output.
 
-### Mocking API Responses
-
-The script uses `unittest.mock.patch` to:
-- Simulate a total customer count endpoint.
-- Simulate address data for individual customers.
-
-This enables testing without a live API.
-
 ## Future Enhancements
 
-1. Integration with a real API when available.
-2. Enhanced validation logic for more robust data cleaning.
-3. Command-line arguments for specifying output file names and formats.
+1. Enhanced validation logic for more robust data cleaning.
+2. Command-line arguments for specifying output file names and formats.
+3. Error handling for network issues and API errors.
